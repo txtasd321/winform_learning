@@ -6,5 +6,13 @@ namespace WinFormsApp1
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2();
+            frm.Show();
+            Thread.Sleep(2000);
+            frm.Hide();
+        }
     }
 }
