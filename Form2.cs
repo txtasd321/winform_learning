@@ -15,6 +15,9 @@ namespace WinFormsApp1
         public Form2()
         {
             InitializeComponent();
+            //int pid = Environment.CurrentManagedThreadId;
+            int pid = Thread.CurrentThread.ManagedThreadId;
+            this.textBox1.Text = pid.ToString();
         }
     }
 }
