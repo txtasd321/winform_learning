@@ -1,3 +1,4 @@
+
 namespace WinFormsApp1
 {
     public partial class Form1 : Form
@@ -9,13 +10,13 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Thread thr = new Thread(Showfrm2);
-            thr.IsBackground = true;
-            thr.Start();
+            //Thread thr = new Thread(Showfrm2);
+            //thr.IsBackground = true;
+            //thr.Start();
 
-            //Form2 frm = new Form2();
-            //frm.Show();
-
+            Form2 frm = new Form2();
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void Showfrm2()
@@ -27,7 +28,26 @@ namespace WinFormsApp1
         {
             Form2 frm = new Form2();
             frm.Show();
-            //Thread.Sleep(2000);        
         }
+
+        //protected override void WndProc(ref Message m)
+        //{
+            
+        //    base.WndProc(ref m);
+        //}
+
+        //private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    DialogResult result;
+        //    result = MessageBox.Show("确定退出","退出",MessageBoxButtons.OK,MessageBoxIcon.Question);
+        //    if (result == DialogResult.OK)
+        //    {
+        //        Application.ExitThread();
+        //    }
+        //    else
+        //    {
+        //        e.Cancel = true;
+        //    }
+        //}
     }
 }
